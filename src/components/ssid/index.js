@@ -55,26 +55,20 @@ export default class SSID extends Component {
     }
   }
 
-  validate() {
-    return (state) => {
-      this.setState(state);
-    }
+  validate(state) {
+    this.setState(state)
   }
 
-  setScanMode() {
-    return (e) => {
-      e.preventDefault();
-      this.props.onModeChange(true);
-      this.props.onChange(this.state.scanned);
-    }
-  }
+  setScanMode (e) {
+    e.preventDefault();
+    this.props.onModeChange(true);
+    this.props.onChange(this.state.scanned);
+  };
 
-  setManualMode() {
-    return (e) => {
-      e.preventDefault();
-      this.props.onModeChange(false);
-      this.props.onChange(this.state.manual);
-    }
+  setManualMode(e) {
+    e.preventDefault();
+    this.props.onModeChange(false);
+    this.props.onChange(this.state.manual);
   };
 
   setScannedState(state) {
@@ -96,16 +90,12 @@ export default class SSID extends Component {
     }
   };
 
-  onChangeAp() {
-    return (e) => {
-      this.changeAp(e.target.value);
-    }
+  onChangeAp(e) {
+    this.changeAp(e.target.value);
   }
 
-  changeManualSSID() {
-    return (e) => {
-      this.setManualState({ ssid: e.target.value });
-    }
+  changeManualSSID(e) {
+    this.setManualState({ ssid: e.target.value });
   }
 
   renderScanning() {
@@ -116,17 +106,15 @@ export default class SSID extends Component {
     );
   }
 
-  onScan() {
-    return (e) => {
-      e.preventDefault();
-      this.scan();
-    }
+  onScan(e) {
+    e.preventDefault();
+    this.scan();
   }
 
   renderAps(aps) {
     return (
       <div className={styles.wrapper}>
-        <select id={this._id} onChange={this.onChangeAp} className={styles['select-ap']} disabled={aps.length == 0}>
+        <select id={this._id} onChange={this.onChangeAp.bind(this)} className={styles['select-ap']} disabled={aps.length == 0}>
           {aps.length > 0 ?
             this.state.aps.map((ap) => {
               return (
@@ -137,7 +125,7 @@ export default class SSID extends Component {
             <option value="">No Access Points Found</option>
           }
         </select>
-        <a href="#" className={styles.rescan} onClick={this.onScan}>&#8635;</a>
+        <a href="#" className={styles.rescan} onClick={this.onScan.bind(this)}>&#8635;</a>
       </div>
     );
   }
@@ -150,9 +138,9 @@ export default class SSID extends Component {
         autocapitalize="off"
         value={this.state.manual.ssid}
         id={this._id}
-        onInput={this.changeManualSSID}
-        onValidate={this.validate}
-				className={styles.input}
+        onInput={this.changeManualSSID.bind(this)}
+        onValidate={this.validate.bind(this)}
+        className={styles.input}
         validators={textValidators} />
     );
   }
@@ -187,9 +175,9 @@ export default class SSID extends Component {
 
   renderToggle() {
     if(this.props.scan) {
-      return <a href="#" onClick={this.setManualMode} className={styles.tab}>Join another network</a>
+      return <a href="#" onClick={this.setManualMode.bind(this)} className={styles.tab}>Join another network</a>
     } else {
-      return <a href="#" onClick={this.setScanMode} className={styles.tab}>Scan for networks</a>
+      return <a href="#" onClick={this.setScanMode.bind(this)} className={styles.tab}>Scan for networks</a>
     }
   }
 
