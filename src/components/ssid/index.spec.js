@@ -383,13 +383,13 @@ describe("<SSID>", () => {
 
       it("prevents default", () => {
         obj().onScan(e);
-        expect(e.preventDefault).to.have.beenCalled;
+        expect(e.preventDefault).to.have.been.called;
       });
 
       it("re-scans", () => {
         let spy = sinon.spy(obj(), 'scan');
         obj().onScan(e);
-        expect(spy).to.have.beenCalled;
+        expect(spy).to.have.been.called;
       });
     });
 
