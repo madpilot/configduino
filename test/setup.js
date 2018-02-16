@@ -6,6 +6,7 @@ import sinonChai from 'sinon-chai';
 import assertJsx, { options } from 'preact-jsx-chai';
 import { h, render } from 'preact';
 import jsdom from 'jsdom';
+const { JSDOM } = jsdom;
 
 // when checking VDOM assertions, don't compare functions, just nodes and attributes:
 options.functions = false;
@@ -25,25 +26,23 @@ global.sleep = ms => new Promise( resolve => setTimeout(resolve, ms) );
 global.fetch = (() => { return new Promise((resolve, reject) => {}); });
 
 // Setup JSDOM
-var doc = jsdom.jsdom("<!doctype html><html><body></body></html>");
-var win = doc.defaultView;
+const { document } = (new JSDOM('')).window;
+global.document = document;
+global.window = document.defaultView;;
 
-global.document = doc;
-global.window = win;
-
-for(var key in win) {
-  if(!win.hasOwnProperty(key)) continue;
+for(var key in global.window) {
+  if(!global.window.hasOwnProperty(key)) continue;
   if(key in global) continue;
 
-  global[key] = win[key];
+  global[key] = global.windown[key];
 }
 
 let dom = null;
 global.renderHTML = ((component) => {
   if(dom === null) {
-    document.body.innerHTML = '';
-    render(component, document.body);
-    dom = document.body;
+    global.document.body.innerHTML = '';
+    render(component, global.document.body);
+    dom = global.document.body;
   }
   return dom;
 });
