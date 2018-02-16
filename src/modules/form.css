@@ -1,0 +1,40 @@
+@value smaller, neutral, lightest, primary, primary-highlight from './variables.css';
+
+.form {
+  width: 100%;
+  max-width: 15rem;
+  margin: 0 auto;
+}
+
+.button-wrapper {
+  margin-top: 1rem;
+	width: 100%;
+  height: 2rem;
+}
+
+.button {
+	width: 100%;
+  height: 100%;
+	background-color: primary;
+  color: lightest;
+  border: 0 none;
+  text-transform: uppercase;
+  padding: smaller 1rem;
+  font-weight: 700;
+  border-radius: 5px;
+  transition: background-color linear 0.2s;
+}
+
+.button:disabled {
+  background-color: neutral;
+}
+
+.button:hover {
+  background-color: primary-highlight;
+  cursor: pointer;
+}
+
+.button:disabled:hover {
+  background-color: neutral;
+  cursor: default;
+}

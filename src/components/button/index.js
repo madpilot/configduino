@@ -1,34 +1,22 @@
-import { PRIMARY, PRIMARY_HIGHLIGHT, LIGHTEST, NEUTRAL } from '../../styles/colors.js';
 import { h, Component } from 'preact';
-import { ThemeProvider } from 'styled-components';
-import { Wrapper as StyledButtonWrapper, Button as StyledButton } from './styles.js';
+import styles from './style.css';
 
-class Button extends Component {
+export default class Button extends Component {
   render() {
+    let containerClassName = styles.container;
+    if(this.props.className) {
+      containerClassName += " " + this.props.className;
+    }
+
     let disabled = !!this.props.disabled;
     if(this.context.validation) {
       disabled = !this.context.validation.valid();
     }
 
     return (
-      <ThemeProvider theme={this.props.theme}>
-        <StyledButtonWrapper>
-          <StyledButton disabled={disabled}>{this.props.children}</StyledButton>
-        </StyledButtonWrapper>
-      </ThemeProvider>
+      <div className={containerClassName}>
+        <button className={styles.button} disabled={disabled}>{this.props.children}</button>
+      </div>
     );
   }
 }
-
-Button.defaultProps = {
-  theme: {
-    color: LIGHTEST,
-    backgroundColor: PRIMARY,
-    disabledColor: LIGHTEST,
-    disabledBackgroundColor: NEUTRAL,
-    hoverColor: LIGHTEST,
-    hoverBackgroundColor: PRIMARY_HIGHLIGHT
-  }
-}
-
-export default Button;

@@ -1,0 +1,9 @@
+.label {
+  composes: label from '../../modules/label.css';
+  margin-right: 0.5rem;
+}
+
+.input {
+  box-sizing: border-box;
+  margin-right: 0.25rem;
+}

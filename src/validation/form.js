@@ -1,11 +1,4 @@
 import { h, Component } from 'preact';
-import styled from 'styled-components';
-
-const StyledForm = styled.form`
-  width: 100%;
-  max-width: 15rem;
-  margin: 0 auto;
-`;
 
 export default class Form extends Component {
   constructor(props) {
@@ -36,9 +29,9 @@ export default class Form extends Component {
 
   render() {
     return (
-      <StyledForm {...this.props}>
+      <form {...this.props}>
         {this.props.children}
-      </StyledForm>
+      </form>
     );
   }
 }

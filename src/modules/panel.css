@@ -1,0 +1,11 @@
+@value smaller from './variables.css';
+
+.panel {
+  margin: 2rem 0;
+}
+
+.heading {
+  font-size: smaller;
+  text-transform: uppercase;
+  font-weight: bold;
+}

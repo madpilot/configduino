@@ -1,0 +1,22 @@
+@value smaller, error from '../../modules/variables.css';
+
+.label {
+  composes: label from '../../modules/label.css';
+}
+
+.input {
+  composes: input from '../../modules/input.css';
+}
+
+.wrapper {
+  composes: wrapper from '../../modules/input.css';
+}
+
+.error {
+  color: error;
+  font-size: smaller;
+}
+
+.error:before {
+  content: " ";
+}

@@ -1,0 +1,11 @@
+.link {
+  color: #29506D;
+  text-decoration: underline;
+  composes: link from './animation.css';
+}
+
+.link:hover {
+  color: #000;
+  text-decoration: underline;
+  cursor: pointer;
+}

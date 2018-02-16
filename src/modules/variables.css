@@ -1,0 +1,28 @@
+@value darkest  #000000;
+@value darker   #101010;
+@value dark     #303030;
+@value neutral  #999999;
+@value light    #cfcfcf;
+@value lighter  #efefef;
+@value lightest #ffffff;
+
+@value lighter-highlight: #f8f8f8;
+
+@value primary: #29506D;
+@value primary-highlight #496D89;
+
+@value success #0ca228;
+@value warning #fbaf5d;
+@value error #ed1c24;
+
+@value line-height: 20px;
+@value smallest 9px;
+@value smaller 12px;
+@value small 15px;
+@value normal 18px;
+@value large 23px;
+@value x-large 29px;
+@value xx-large 36px;
+@value xxx-large 45px;
+
+
