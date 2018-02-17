@@ -8,4 +8,4 @@ I like building Arduino Projects. I like to use the ESP8266 for those projects. 
 
 These components allow me to quickly throw together a lightweight UI for my projects.
 
-[The Captivate portal in action](https://github.com/madpilot/configduino/blob/master/docs/images/example.jpg)
+![The Captivate portal in action](https://github.com/madpilot/configduino/blob/master/docs/images/example.jpg)
