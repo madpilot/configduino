@@ -44,5 +44,5 @@ yarn add configduino
 
 ## An example app
 
-Coming soon..
+[Sample](http://htmlpreview.github.io/?https://github.com/madpilot/configduino-sample/blob/master/demo/index.html)
 
