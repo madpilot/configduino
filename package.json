@@ -1,6 +1,6 @@
 {
   "name": "configduino",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A set of components for building Arduino captivate portals",
   "main": "index.js",
   "repository": "https://github.com/madpilot/configduino",
