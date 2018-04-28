@@ -39,7 +39,7 @@ export default class NetworkPanel extends Component {
     return (
       <section className={styles.panel}>
         <h3 className={styles.heading}>Network Settings</h3>
-        <Input label="Device Name" name="deviceName" type="text" placeholder="device" value="" autocomplete="off" autocapitalize="off" value={this.props.deviceName} onInput={this.onFieldChange('deviceName').bind(this)} validators={TEXT_VALIDATORS}  />
+        <Input label="Hostname" name="hostname" type="text" placeholder="device" value="" autocomplete="off" autocapitalize="off" value={this.props.hostname} onInput={this.onFieldChange('hostname').bind(this)} validators={TEXT_VALIDATORS}  />
 
 				<div className={styles.group}>
           <BinaryInput type="radio" name="dhcp" label="DHCP" value="1" checked={this.props.dhcp} onChange={this.onDHCPChange.bind(this)} />
